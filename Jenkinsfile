@@ -3,15 +3,14 @@ pipeline {
 
     stages {
         stage('Build and Push Docker Image') {
-           steps {
-                script {
-                    withCredentials([usernamePassword(credentialsId: env.DOCKER_CREDENTIALS_ID, passwordVariable: '041204nesha', usernameVariable: 'makanesha')]) {
-                        sh """
-                        chmod +x deploy.sh
-                        ./deploy.sh
-                        """
-                    }
-                }
+            steps {
+                // Grant executable permissions to the build script
+                sh 'chmod +x deploy.sh'
+
+                // Build the Docker image using the build script
+                sh './deploy.sh'
+
+                
             }
         }
 
