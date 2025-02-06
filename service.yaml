@@ -1,11 +1,9 @@
-# service type loadbalancer       
----
 apiVersion: v1
 kind: Service
 metadata:
   labels:
     app: test
-    name: test
+  name: test
 spec:
   ports:
   - name: http
