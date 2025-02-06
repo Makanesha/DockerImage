@@ -4,7 +4,6 @@ echo hi123
 
 # Docker build and push commands
 sh 'chmod +x build.sh'
-sh './build.sh'
 docker login -u makanesha -p 041204nesha
 docker build -t test .
 docker tag test makanesha/guvi:sample
