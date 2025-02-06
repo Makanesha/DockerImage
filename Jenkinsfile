@@ -13,7 +13,7 @@ pipeline {
         stage('Build and Deploy') {
             steps {
                 script {
-                    withCredentials([usernamePassword(credentialsId: env.DOCKER_CREDENTIALS_ID, passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
+                    withCredentials([usernamePassword(credentialsId: env.DOCKER_CREDENTIALS_ID, passwordVariable: 'makanesha', usernameVariable: '041204nesha')]) {
                         sh """
                         chmod +x deploy.sh
                         ./deploy.sh
