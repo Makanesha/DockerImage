@@ -2,8 +2,16 @@
 
 echo hi123
 
+# Ensure build.sh exists and is executable
+if [ ! -f build.sh ]; then
+  echo "build.sh not found!"
+  exit 1
+fi
+
+chmod +x build.sh
+./build.sh
+
 # Docker build and push commands
-sh 'chmod +x build.sh'
 docker login -u makanesha -p 041204nesha
 docker build -t test .
 docker tag test makanesha/guvi:sample
