@@ -12,6 +12,3 @@ docker push makanesha/guvi:sample
 docker run -itd -p 444:80 makanesha/guvi:sample
 
 # Kubernetes commands to create deployment, expose it, and get service details
-kubectl apply -f deployment.yaml
-kubectl apply -f service.yaml
-kubectl get service test
