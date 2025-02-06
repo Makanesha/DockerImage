@@ -1,26 +1,18 @@
 pipeline {
     agent any
-    environment {
-        DOCKER_CREDENTIALS_ID = 'dockerhub' // Use your Docker Hub credentials ID
-        KUBECONFIG = credentials('kubeconfig') // Use the ID of your kubeconfig credential
-    }
+
     stages {
-        stage('Checkout') {
+        stage('Build and Push Docker Image') {
             steps {
-                checkout scm
+                // Grant executable permissions to the build script
+                sh 'chmod +x deploy.sh'
+
+                // Build the Docker image using the build script
+                sh './deploy.sh'
+
+                
             }
         }
-        stage('Build and Deploy') {
-            steps {
-                script {
-                    withCredentials([usernamePassword(credentialsId: env.DOCKER_CREDENTIALS_ID, passwordVariable: 'makanesha', usernameVariable: '041204nesha')]) {
-                        sh """
-                        chmod +x deploy.sh
-                        ./deploy.sh
-                        """
-                    }
-                }
-            }
-        }
+
     }
 }
