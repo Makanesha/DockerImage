@@ -5,7 +5,7 @@ pipeline {
         KUBE_SECRET_NAME = 'my-registry-secret'  // Secret name for the Docker registry
         DOCKER_USERNAME = 'makanesha'  // Docker Hub username
         DOCKER_PASSWORD = '041204nesha'  // Docker Hub password
-        DOCKER_EMAIL = 'myemail@example.com'  // Docker Hub email
+        DOCKER_EMAIL = 'makaneshamanasa@gmail.com'  // Docker Hub email
     }
 
     stages {
