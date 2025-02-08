@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: devopstask04
-          image: mohamedathikr/devopstask04:latest
+          image: makanesha/task4:img
           ports:
             - containerPort: 80
