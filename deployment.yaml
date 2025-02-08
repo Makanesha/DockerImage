@@ -1,24 +1,20 @@
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    app: test
-  name: test
+  name: devopstask04
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      app: test
+      app: devopstask04
   template:
     metadata:
       labels:
-        app: test
+        app: devopstask04
     spec:
       containers:
-      - name: test
-        image: makanesha/guvi:sample
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 80
-          name: http
-          protocol: TCP
+        - name: devopstask04
+          image: mohamedathikr/devopstask04:latest
+          ports:
+            - containerPort: 80
