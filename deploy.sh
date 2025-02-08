@@ -13,7 +13,7 @@ kubectl config use-context minikube
 
 # Docker build process
 echo "⚙️ Building the Docker image..."
-docker build -t makanesha/task4:img .
+docker build -t makanesha/task4 .
 
 # Docker login securely
 echo "🔑 Logging in to Docker Hub..."
@@ -21,8 +21,8 @@ echo "041204nesha" | docker login -u "makanesha" --password-stdin
 
 # Push the new image
 echo "🚀 Pushing the Docker image to Docker Hub..."
-docker tag makanesha/task4 makanesha/task4:img
-docker push makanesha/task4:img
+docker tag makanesha/task4 makanesha/task4
+docker push makanesha/task4
 
 
 # Deploy to Minikube without using a separate YAML file
