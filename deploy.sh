@@ -21,6 +21,8 @@ echo "041204nesha" | docker login -u "makanesha" --password-stdin
 
 # Push the new image
 echo "🚀 Pushing the Docker image to Docker Hub..."
+docker tag devops04 makanesha/task4
+
 docker push makanesha/task4
 
 # Deploy to Minikube without using a separate YAML file
