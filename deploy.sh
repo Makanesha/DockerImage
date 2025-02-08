@@ -51,3 +51,12 @@ spec:
 EOF
 
 echo "✅ Deployment completed successfully!"
+
+# **🔄 Expose the Deployment as a Service**
+echo "🌍 Exposing the deployment as a NodePort service..."
+kubectl expose deployment devopstask04 --type=NodePort --port=80
+
+# **🔍 Get Service URL**
+echo "🔗 Fetching the service URL..."
+SERVICE_URL=$(minikube service devopstask04 --url)
+echo "🚀 Service is now accessible at: $SERVICE_URL"
